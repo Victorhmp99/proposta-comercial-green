@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useContent } from "@/content/ContentContext";
+import { Counter } from "./Counter";
 
 export function Hero() {
   const { content } = useContent();
@@ -62,7 +63,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-sm tracking-[0.35em] text-cream/40 mb-6"
+          className="font-display text-sm tracking-[0.35em] text-cream/60 mb-6"
         >
           {c.title} · {c.subtitle.toUpperCase()}
         </motion.p>
@@ -83,7 +84,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-7 max-w-xl text-lg text-silver-green leading-relaxed"
+          className="mt-7 max-w-xl text-xl text-silver-green leading-relaxed"
         >
           {c.lede}
         </motion.p>
@@ -97,8 +98,10 @@ export function Hero() {
         >
           {c.stats.map((s) => (
             <div key={s.value} className="max-w-[240px]">
-              <p className="font-display text-3xl text-cream mb-1">{s.value}</p>
-              <p className="text-sm text-silver-green/70 leading-snug">{s.label}</p>
+              <p className="font-display text-4xl text-cream mb-1.5 tabular">
+                <Counter value={s.value} />
+              </p>
+              <p className="text-[15px] text-silver-green/90 leading-snug">{s.label}</p>
             </div>
           ))}
         </motion.div>

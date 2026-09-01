@@ -6,8 +6,8 @@
   --gh-medium: #16a34a; /* Verde profundo — secundário */
   --gh-mint: #22c55e; /* Verde — acento principal */
   --gh-gold: #4ade80; /* Verde claro — destaque (mantém o nome p/ compatibilidade) */
-  --gh-silver-green: #b9c3d6; /* Azul acinzentado — texto secundário */
-  --gh-cream: #f8fafc; /* Branco gelo — texto */
+  --gh-silver-green: #cfd8e8; /* Azul acinzentado claro — texto secundário */
+  --gh-cream: #ffffff; /* Branco — texto principal */
   --gh-bg: #0f172a; /* Navy — fundo do site */
 
   --background: var(--gh-bg);
@@ -35,16 +35,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, .font-display {
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 h2, h3, h4 {
   font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* números tabulares — não "pulam" durante a contagem */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
 }
 
 .perspective-1200 {

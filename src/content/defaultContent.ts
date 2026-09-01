@@ -92,14 +92,14 @@ export const defaultContent = {
   plans: {
     eyebrow: "Planos",
     heading: "Escolha o ritmo de cultivo certo para o seu comercial.",
-    revealLabel: "Ver os valores",
+    revealLabel: "Desbloquear valores",
     hideLabel: "Ocultar valores",
     items: [
       {
         name: "Start",
         description: "Para quem precisa organizar o básico e treinar 1 pessoa por vez.",
         setup: "R$ 1.500",
-        price: "R$ 800–1.000",
+        price: "R$ 2.000",
         features: [
           "Diagnóstico de funil (macro)",
           "Playbook de Vendas (genérico)",
@@ -111,7 +111,7 @@ export const defaultContent = {
         name: "Unique",
         description: "Ritmo quinzenal, playbook mais completo, com certificado.",
         setup: "R$ 2.200",
-        price: "R$ 1.400–1.600",
+        price: "R$ 3.500",
         features: [
           "Diagnóstico de funil + gargalos",
           "Playbook de Vendas + 1 etapa à escolha",
@@ -122,10 +122,10 @@ export const defaultContent = {
         ],
       },
       {
-        name: "Semanal",
+        name: "Estratégico",
         description: "Treinamento em equipe toda semana, playbook único e roleplay.",
         setup: "R$ 2.800",
-        price: "R$ 2.000",
+        price: "R$ 7.890",
         featured: true,
         badge: "Mais vendido",
         features: [
@@ -140,8 +140,8 @@ export const defaultContent = {
       {
         name: "Elite",
         description: "Implementação completa e individualizada por vendedor.",
-        setup: "R$ 18.000–25.000",
-        price: "R$ 8.000–12.000",
+        setup: "R$ 25.000",
+        price: "R$ 13.700",
         features: [
           "Diagnóstico individualizado por vendedor",
           "Playbook único e completo — todas as etapas",
@@ -156,12 +156,12 @@ export const defaultContent = {
   },
 
   imersao: {
-    eyebrow: "Pontual — fora da curva",
-    heading: "Imersão de 1 dia: a virada comercial completa, sem esperar meses.",
+    eyebrow: "Imersão Floresta",
+    heading: "Imersão Floresta: a virada comercial completa em 1 dia, sem esperar meses.",
     intro:
       "Diagnóstico prévio, um dia inteiro presencial com o time, playbook construído ao " +
       "vivo e 30 dias de suporte direto. Vagas limitadas por trimestre.",
-    revealLabel: "Ver o investimento",
+    revealLabel: "Desbloquear investimento",
     hideLabel: "Ocultar investimento",
     steps: [
       { tag: "Antes", title: "Diagnóstico prévio", text: "Funil, CRM atual, scripts e entrevista com a liderança — 1 a 2 semanas antes." },
@@ -172,9 +172,9 @@ export const defaultContent = {
       { tag: "Depois", title: "30 dias de suporte", text: "WhatsApp direto + 1 call de revisão no dia 30." },
     ],
     tableLabel: "Preço de tabela",
-    tablePrice: "R$ 35.000 – 45.000",
+    tablePrice: "R$ 45.000",
     closingLabel: "Investimento de fechamento",
-    closingPrice: "R$ 18.000 – 28.000",
+    closingPrice: "R$ 28.000",
   },
 
   closing: {

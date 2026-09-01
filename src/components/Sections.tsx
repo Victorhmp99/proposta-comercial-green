@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Reveal, RevealStagger, staggerItem } from "./Reveal";
 import { Section, Eyebrow, Kicker } from "./Section";
 import { useContent } from "@/content/ContentContext";
-import { CheckCircle2, X, Eye, EyeOff } from "lucide-react";
+import { Counter } from "./Counter";
+import { CheckCircle2, X, Lock, Unlock } from "lucide-react";
 
 /* ---------- botão de revelar valores ---------- */
 function RevealButton({
@@ -23,9 +24,9 @@ function RevealButton({
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex items-center gap-2 rounded-full bg-mint px-7 py-3.5 text-sm font-bold text-[#0f172a] transition hover:bg-mint/90 shadow-[0_0_40px_-10px_rgba(34,197,94,0.7)]"
+      className="inline-flex items-center gap-2.5 rounded-full bg-mint px-8 py-4 text-base font-bold text-[#0f172a] transition hover:bg-mint/90 hover:scale-[1.02] active:scale-100 shadow-[0_0_45px_-10px_rgba(34,197,94,0.8)]"
     >
-      {revealed ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+      {revealed ? <Unlock className="h-5 w-5" /> : <Lock className="h-5 w-5" />}
       {revealed ? hideLabel : showLabel}
     </button>
   );
@@ -44,18 +45,18 @@ export function Problem() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green/80 leading-relaxed">{c.intro}</p>
+        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
       <RevealStagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
         {c.stats.map((s) => (
           <motion.div key={s.num + s.suffix} variants={staggerItem} className="bg-[#0f172a] p-7">
-            <p className="font-display text-5xl text-cream leading-none">
-              {s.num}
+            <p className="font-display text-5xl text-cream leading-none tabular">
+              <Counter value={s.num} />
               <span className="text-mint">{s.suffix}</span>
             </p>
-            <p className="mt-4 text-sm text-silver-green/75 leading-snug">{s.text}</p>
-            <p className="mt-3 text-xs text-silver-green/35">{s.src}</p>
+            <p className="mt-4 text-[15px] text-silver-green leading-snug">{s.text}</p>
+            <p className="mt-3 text-xs text-silver-green/55">{s.src}</p>
           </motion.div>
         ))}
       </RevealStagger>
@@ -80,7 +81,7 @@ export function Compare() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green/80 leading-relaxed">{c.intro}</p>
+        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
       <Reveal delay={0.12} className="mt-12">
@@ -106,9 +107,9 @@ export function Compare() {
                   i < c.rows.length - 1 ? "border-b border-white/10" : ""
                 }`}
               >
-                <div className="px-5 py-4 text-silver-green/60 bg-black/20">{row.label}</div>
-                <div className="px-5 py-4 text-cream/70 bg-red-500/5">{row.weak}</div>
-                <div className="px-5 py-4 text-cream/90 bg-mint/8">{row.strong}</div>
+                <div className="px-5 py-4 font-semibold text-silver-green bg-black/20">{row.label}</div>
+                <div className="px-5 py-4 text-cream/85 bg-red-500/8">{row.weak}</div>
+                <div className="px-5 py-4 text-cream bg-mint/10">{row.strong}</div>
               </div>
             ))}
           </div>
@@ -134,7 +135,7 @@ export function Cultivo() {
         {/* visual do método */}
         <Reveal delay={0.08}>
           <div className="rounded-2xl border border-white/10 bg-forest/60 p-8">
-            <p className="text-xs uppercase tracking-widest text-silver-green/40 mb-2">
+            <p className="text-xs uppercase tracking-widest text-silver-green/60 mb-2">
               Método Floresta
             </p>
             <h3 className="font-display text-2xl text-cream mb-7">{c.visualTitle}</h3>
@@ -143,7 +144,7 @@ export function Cultivo() {
                 <div
                   key={s.num}
                   className={`flex gap-4 py-4 border-t border-white/10 text-sm ${
-                    s.active ? "text-cream font-semibold" : "text-silver-green/60"
+                    s.active ? "text-cream font-semibold" : "text-silver-green/85"
                   }`}
                 >
                   <span
@@ -168,8 +169,8 @@ export function Cultivo() {
         {/* texto */}
         <Reveal delay={0.16}>
           <h3 className="text-2xl text-cream mb-5 leading-snug">{c.textHeading}</h3>
-          <p className="text-silver-green/75 leading-relaxed mb-4">{c.paragraph1}</p>
-          <p className="text-silver-green/75 leading-relaxed">{c.paragraph2}</p>
+          <p className="text-silver-green leading-relaxed mb-4">{c.paragraph1}</p>
+          <p className="text-silver-green leading-relaxed">{c.paragraph2}</p>
           <div className="mt-8 border-l-2 border-mint pl-5">
             <p className="font-display text-xl text-cream leading-snug">“{c.quote}”</p>
           </div>
@@ -200,8 +201,8 @@ export function Anchor() {
               i < c.rows.length - 1 ? "border-b border-white/10" : ""
             }`}
           >
-            <span className="text-sm text-cream/80">{row.label}</span>
-            <span className="font-display text-sm text-silver-green/70 shrink-0">{row.value}</span>
+            <span className="text-[15px] text-cream/95">{row.label}</span>
+            <span className="font-display text-[15px] text-silver-green shrink-0">{row.value}</span>
           </motion.div>
         ))}
       </RevealStagger>
@@ -214,7 +215,7 @@ export function Anchor() {
       </Reveal>
 
       <Reveal delay={0.14}>
-        <p className="mt-7 max-w-2xl text-sm text-silver-green/70 leading-relaxed">{c.kicker}</p>
+        <p className="mt-7 max-w-2xl text-sm text-silver-green/90 leading-relaxed">{c.kicker}</p>
       </Reveal>
     </Section>
   );
@@ -262,27 +263,28 @@ export function Plans() {
                   {plan.badge}
                 </span>
               )}
-              <p className="font-display text-xl text-cream mb-2">{plan.name}</p>
-              <p className="text-xs text-silver-green/60 leading-snug min-h-[48px]">
+              <p className="font-display text-2xl text-cream mb-2">{plan.name}</p>
+              <p className="text-sm text-silver-green/85 leading-snug min-h-[54px]">
                 {plan.description}
               </p>
 
-              {/* preços — borrados até revelar */}
+              {/* preços — borrados até desbloquear */}
               <div className="mt-5 mb-5">
                 <div className={revealed ? "" : "value-blur"}>
-                  <p className="text-xs text-silver-green/60">
-                    Implementação <span className="font-bold text-cream">{plan.setup}</span>
+                  <p className="text-sm text-silver-green/70">
+                    Implementação{" "}
+                    <span className="font-bold text-cream tabular">{plan.setup}</span>
                   </p>
-                  <p className="font-display text-2xl text-cream mt-1">
-                    {plan.price}
-                    <span className="text-xs font-normal text-silver-green/60"> /mês</span>
+                  <p className="font-display text-3xl text-cream mt-1.5 tabular">
+                    {revealed ? <Counter value={plan.price} /> : plan.price}
+                    <span className="text-sm font-normal text-silver-green/70"> /mês</span>
                   </p>
                 </div>
               </div>
 
               <ul className="space-y-2.5 flex-1">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-xs text-silver-green/70">
+                  <li key={f} className="flex items-start gap-2 text-sm text-silver-green/90 leading-snug">
                     <span className="text-mint font-bold shrink-0">+</span>
                     {f}
                   </li>
@@ -310,7 +312,7 @@ export function Imersao() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green/80 leading-relaxed">{c.intro}</p>
+        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
       <RevealStagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
@@ -318,7 +320,7 @@ export function Imersao() {
           <motion.div key={s.title} variants={staggerItem} className="bg-[#101b32] p-6">
             <p className="text-xs font-bold text-mint">{s.tag}</p>
             <h4 className="font-display text-base text-cream mt-2">{s.title}</h4>
-            <p className="text-xs text-silver-green/65 mt-2 leading-snug">{s.text}</p>
+            <p className="text-sm text-silver-green/90 mt-2 leading-snug">{s.text}</p>
           </motion.div>
         ))}
       </RevealStagger>
@@ -332,16 +334,18 @@ export function Imersao() {
             showLabel={c.revealLabel}
             hideLabel={c.hideLabel}
           />
-          <div className="mt-8 flex flex-wrap gap-12">
+          <div className="mt-9 flex flex-wrap gap-14">
             <div className={revealed ? "" : "value-blur"}>
-              <p className="text-xs font-semibold text-silver-green/50">{c.tableLabel}</p>
-              <p className="font-display text-3xl text-cream/60 mt-1 line-through decoration-red-400/60">
-                {c.tablePrice}
+              <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.tableLabel}</p>
+              <p className="font-display text-3xl text-cream/55 line-through decoration-red-400 decoration-2 tabular">
+                {revealed ? <Counter value={c.tablePrice} /> : c.tablePrice}
               </p>
             </div>
             <div className={revealed ? "" : "value-blur"}>
-              <p className="text-xs font-semibold text-silver-green/50">{c.closingLabel}</p>
-              <p className="font-display text-3xl text-mint mt-1">{c.closingPrice}</p>
+              <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.closingLabel}</p>
+              <p className="font-display text-4xl text-mint tabular">
+                {revealed ? <Counter value={c.closingPrice} /> : c.closingPrice}
+              </p>
             </div>
           </div>
         </div>

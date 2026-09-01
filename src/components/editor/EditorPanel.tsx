@@ -173,7 +173,23 @@ export function EditorPanel({ onClose }: { onClose: () => void }) {
             <TextArea label="Frase final" rows={3} value={d.anchor.kicker} onChange={(v) => patch("anchor", { ...d.anchor, kicker: v })} />
           </Section>
 
+          <Section title="Glossário (antes dos planos)">
+            <Field label="Título" value={d.glossary.heading} onChange={(v) => patch("glossary", { ...d.glossary, heading: v })} />
+            <TextArea label="Introdução" rows={3} value={d.glossary.intro} onChange={(v) => patch("glossary", { ...d.glossary, intro: v })} />
+            {d.glossary.items.map((item, i) => (
+              <div key={i} className="rounded-lg border border-white/10 p-3 space-y-2">
+                <Field label={`Termo ${i + 1}`} value={item.term} onChange={(v) => {
+                  const items = [...d.glossary.items]; items[i] = { ...items[i], term: v }; patch("glossary", { ...d.glossary, items });
+                }} />
+                <TextArea label="Explicação" rows={3} value={item.text} onChange={(v) => {
+                  const items = [...d.glossary.items]; items[i] = { ...items[i], text: v }; patch("glossary", { ...d.glossary, items });
+                }} />
+              </div>
+            ))}
+          </Section>
+
           <Section title="Planos">
+            <Field label="Rótulo do resultado" value={d.plans.resultLabel} onChange={(v) => patch("plans", { ...d.plans, resultLabel: v })} />
             <Field label="Título" value={d.plans.heading} onChange={(v) => patch("plans", { ...d.plans, heading: v })} />
             <Field label="Botão — mostrar" value={d.plans.revealLabel} onChange={(v) => patch("plans", { ...d.plans, revealLabel: v })} />
             <Field label="Botão — ocultar" value={d.plans.hideLabel} onChange={(v) => patch("plans", { ...d.plans, hideLabel: v })} />
@@ -184,6 +200,12 @@ export function EditorPanel({ onClose }: { onClose: () => void }) {
                 }} />
                 <Field label="Descrição" value={plan.description} onChange={(v) => {
                   const items = [...d.plans.items]; items[i] = { ...items[i], description: v }; patch("plans", { ...d.plans, items });
+                }} />
+                <Field label="Resultado (ex.: 5x)" value={plan.result} onChange={(v) => {
+                  const items = [...d.plans.items]; items[i] = { ...items[i], result: v }; patch("plans", { ...d.plans, items });
+                }} />
+                <Field label="Texto do resultado" value={plan.resultNote} onChange={(v) => {
+                  const items = [...d.plans.items]; items[i] = { ...items[i], resultNote: v }; patch("plans", { ...d.plans, items });
                 }} />
                 <Field label="Implementação" value={plan.setup} onChange={(v) => {
                   const items = [...d.plans.items]; items[i] = { ...items[i], setup: v }; patch("plans", { ...d.plans, items });

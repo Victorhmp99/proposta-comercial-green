@@ -4,6 +4,7 @@ import {
   Compare,
   Cultivo,
   Anchor,
+  Glossary,
   Plans,
   Imersao,
   Closing,
@@ -17,6 +18,7 @@ export default function Home() {
       <Compare />
       <Cultivo />
       <Anchor />
+      <Glossary />
       <Plans />
       <Imersao />
       <Closing />

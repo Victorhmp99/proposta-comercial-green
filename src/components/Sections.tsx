@@ -221,6 +221,40 @@ export function Anchor() {
   );
 }
 
+/* ---------- 5b. GLOSSÁRIO ---------- */
+export function Glossary() {
+  const { content } = useContent();
+  const c = content.glossary;
+
+  return (
+    <Section id="glossario" tone="black" panel>
+      <Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">
+          {c.heading}
+        </h2>
+      </Reveal>
+
+      <Reveal delay={0.08}>
+        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">
+          {c.intro}
+        </p>
+      </Reveal>
+
+      <RevealStagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {c.items.map((item) => (
+          <motion.div key={item.term} variants={staggerItem}>
+            <div className="h-full rounded-2xl border border-white/10 bg-black/30 p-6 text-left">
+              <p className="font-display text-xl text-mint mb-3">{item.term}</p>
+              <p className="text-[15px] text-silver-green/90 leading-snug">{item.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </RevealStagger>
+    </Section>
+  );
+}
+
 /* ---------- 6. PLANOS (valores borrados) ---------- */
 export function Plans() {
   const { content } = useContent();
@@ -228,7 +262,7 @@ export function Plans() {
   const [revealed, setRevealed] = useState(false);
 
   return (
-    <Section id="planos" tone="black" panel>
+    <Section id="planos" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">{c.heading}</h2>
@@ -255,14 +289,33 @@ export function Plans() {
                   : "border-white/10 bg-black/25"
               }`}
             >
-              {plan.featured && plan.badge && (
-                <span
-                  style={{ borderRadius: 9999 }}
-                  className="absolute -top-3 right-5 bg-mint px-3 py-1 text-[11px] font-bold text-[#0f172a]"
-                >
-                  {plan.badge}
-                </span>
-              )}
+              {/* resultado em destaque */}
+              <div
+                className={`-mx-6 -mt-6 mb-5 rounded-t-2xl px-5 py-4 border-b ${
+                  plan.featured
+                    ? "bg-mint/20 border-mint/40"
+                    : "bg-mint/10 border-white/10"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-mint/80 font-bold">
+                    {c.resultLabel}
+                  </p>
+                  {plan.featured && plan.badge && (
+                    <span
+                      style={{ borderRadius: 9999 }}
+                      className="bg-mint px-2.5 py-0.5 text-[10px] font-bold text-[#0f172a] shrink-0"
+                    >
+                      {plan.badge}
+                    </span>
+                  )}
+                </div>
+                <p className="font-display text-4xl text-mint leading-none">{plan.result}</p>
+                <p className="text-[11px] text-silver-green/80 leading-snug mt-1.5">
+                  {plan.resultNote}
+                </p>
+              </div>
+
               <p className="font-display text-2xl text-cream mb-2">{plan.name}</p>
               <p className="text-sm text-silver-green/85 leading-snug min-h-[54px]">
                 {plan.description}
@@ -305,7 +358,7 @@ export function Imersao() {
   const [revealed, setRevealed] = useState(false);
 
   return (
-    <Section id="imersao" tone="forest" panel>
+    <Section id="imersao" tone="black" panel>
       {/* título em destaque */}
       <Reveal>
         <h2 className="font-display text-5xl sm:text-7xl text-gradient-gold leading-none tracking-tight uppercase">

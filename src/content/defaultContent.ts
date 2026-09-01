@@ -89,14 +89,51 @@ export const defaultContent = {
       "cobraria só pela implementação.",
   },
 
+  glossary: {
+    eyebrow: "Antes de escolher",
+    heading: "O que é cada coisa que vem nos planos.",
+    intro:
+      "Sem jargão: aqui está o que cada entrega significa na prática e o que ela muda " +
+      "no dia a dia do seu time comercial.",
+    items: [
+      {
+        term: "Diagnóstico",
+        text: "Levantamento do seu funil real: de onde vêm os leads, em que etapa eles somem e quanto você perde nisso. É o raio-x que define tudo o que vem depois.",
+      },
+      {
+        term: "Playbook de Vendas",
+        text: "O manual da sua operação comercial. Como abordar, qualificar, apresentar preço, contornar objeção e fechar — documentado, para qualquer vendedor novo executar igual.",
+      },
+      {
+        term: "Scripts",
+        text: "As falas prontas para WhatsApp, telefone e reunião. Primeira mensagem, follow-up, quebra de objeção e fechamento — testados, não improvisados.",
+      },
+      {
+        term: "CRM",
+        text: "O sistema onde cada lead vira um registro com etapa, histórico e próximo passo. É o que faz você enxergar a taxa de conversão real em vez de achismo.",
+      },
+      {
+        term: "Roleplay",
+        text: "Simulação de venda ao vivo: o vendedor atende um cliente encenado e recebe correção na hora. É treino de verdade — erra no ensaio, não no lead real.",
+      },
+      {
+        term: "SLA",
+        text: "O prazo máximo para você ser respondido pela nossa equipe. SLA 24h significa retorno em até um dia útil; no mesmo dia significa canal direto.",
+      },
+    ],
+  },
+
   plans: {
     eyebrow: "Planos",
     heading: "Escolha o ritmo de cultivo certo para o seu comercial.",
-    revealLabel: "Desbloquear valores",
-    hideLabel: "Ocultar valores",
+    resultLabel: "Resultado",
+    revealLabel: "Desbloquear o investimento",
+    hideLabel: "Ocultar o investimento",
     items: [
       {
         name: "Start",
+        result: "2x",
+        resultNote: "mais rápido para organizar o funil",
         description: "Para quem precisa organizar o básico e treinar 1 pessoa por vez.",
         setup: "R$ 1.500",
         price: "R$ 2.000",
@@ -109,6 +146,8 @@ export const defaultContent = {
       },
       {
         name: "Unique",
+        result: "3x",
+        resultNote: "mais rápido para padronizar o time",
         description: "Ritmo quinzenal, playbook mais completo, com certificado.",
         setup: "R$ 2.200",
         price: "R$ 3.500",
@@ -123,8 +162,10 @@ export const defaultContent = {
       },
       {
         name: "Estratégico",
+        result: "5x",
+        resultNote: "mais rápido para escalar a conversão",
         description: "Treinamento em equipe toda semana, playbook único e roleplay.",
-        setup: "R$ 2.800",
+        setup: "R$ 3.697",
         price: "R$ 7.890",
         featured: true,
         badge: "Mais vendido",
@@ -139,8 +180,10 @@ export const defaultContent = {
       },
       {
         name: "Elite",
+        result: "10x",
+        resultNote: "mais rápido para virar máquina de vendas",
         description: "Implementação completa e individualizada por vendedor.",
-        setup: "R$ 4.749",
+        setup: "R$ 5.490",
         price: "R$ 13.700",
         features: [
           "Diagnóstico individualizado por vendedor",

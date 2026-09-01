@@ -276,7 +276,7 @@ export function Plans() {
                     <span className="font-bold text-cream tabular">{plan.setup}</span>
                   </p>
                   <p className="font-display text-3xl text-cream mt-1.5 tabular">
-                    {revealed ? <Counter value={plan.price} /> : plan.price}
+                    {plan.price}
                     <span className="text-sm font-normal text-silver-green/70"> /mês</span>
                   </p>
                 </div>
@@ -315,12 +315,31 @@ export function Imersao() {
         <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
-      <RevealStagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+      {/* Método Floresta em destaque */}
+      <Reveal delay={0.12}>
+        <div className="mt-10 rounded-2xl border border-mint/35 bg-mint/[0.07] px-7 py-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <p className="font-display text-3xl sm:text-4xl text-gradient-gold leading-none shrink-0">
+            {c.methodName}
+          </p>
+          <p className="text-[15px] text-silver-green leading-snug max-w-md">{c.methodNote}</p>
+        </div>
+      </Reveal>
+
+      <RevealStagger className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
         {c.steps.map((s) => (
           <motion.div key={s.title} variants={staggerItem} className="bg-[#101b32] p-6">
             <p className="text-xs font-bold text-mint">{s.tag}</p>
             <h4 className="font-display text-base text-cream mt-2">{s.title}</h4>
-            <p className="text-sm text-silver-green/90 mt-2 leading-snug">{s.text}</p>
+            <p className="text-sm text-silver-green/90 mt-2 leading-snug">
+              {s.text.split(c.methodName).map((part, i, arr) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && (
+                    <strong className="font-bold text-mint">{c.methodName}</strong>
+                  )}
+                </span>
+              ))}
+            </p>
           </motion.div>
         ))}
       </RevealStagger>

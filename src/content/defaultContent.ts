@@ -140,7 +140,7 @@ export const defaultContent = {
       {
         name: "Elite",
         description: "Implementação completa e individualizada por vendedor.",
-        setup: "R$ 25.000",
+        setup: "R$ 4.749",
         price: "R$ 13.700",
         features: [
           "Diagnóstico individualizado por vendedor",
@@ -163,6 +163,10 @@ export const defaultContent = {
       "vivo e 30 dias de suporte direto. Vagas limitadas por trimestre.",
     revealLabel: "Desbloquear investimento",
     hideLabel: "Ocultar investimento",
+    methodName: "Método Floresta",
+    methodNote:
+      "A palestra inteira é conduzida dentro do Método Floresta — as 5 etapas aplicadas " +
+      "ao vivo, com os números e o funil reais do seu time.",
     steps: [
       { tag: "Antes", title: "Diagnóstico prévio", text: "Funil, CRM atual, scripts e entrevista com a liderança — 1 a 2 semanas antes." },
       { tag: "Manhã", title: "Devolutiva e alinhamento", text: "Gargalos apresentados direto para a liderança e o time, ao vivo." },

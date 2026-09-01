@@ -7,7 +7,7 @@ import { Section, Eyebrow, Kicker } from "./Section";
 import { useContent } from "@/content/ContentContext";
 import { Counter } from "./Counter";
 import { CaseBubbles } from "./CaseBubbles";
-import { CheckCircle2, X, Lock, Unlock } from "lucide-react";
+import { CheckCircle2, X, Lock, Unlock, Clock } from "lucide-react";
 
 /* ---------- botão de revelar valores ---------- */
 function RevealButton({
@@ -347,6 +347,10 @@ export function Plans() {
               <p className="font-display text-2xl text-cream mb-2">{plan.name}</p>
               <p className="text-sm text-silver-green/85 leading-snug sm:min-h-[54px]">
                 {plan.description}
+              </p>
+              <p className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-mint/30 bg-mint/10 px-3 py-1.5 text-xs font-semibold text-mint">
+                <Clock className="h-3.5 w-3.5 shrink-0" />
+                {plan.frequency}
               </p>
 
               {/* preços — borrados até desbloquear */}

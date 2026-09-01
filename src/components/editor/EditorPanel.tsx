@@ -206,6 +206,9 @@ export function EditorPanel({ onClose }: { onClose: () => void }) {
                 <Field label="Descrição" value={plan.description} onChange={(v) => {
                   const items = [...d.plans.items]; items[i] = { ...items[i], description: v }; patch("plans", { ...d.plans, items });
                 }} />
+                <Field label="Frequência do treinamento" value={plan.frequency} onChange={(v) => {
+                  const items = [...d.plans.items]; items[i] = { ...items[i], frequency: v }; patch("plans", { ...d.plans, items });
+                }} />
                 <Field label="Resultado (ex.: 5x)" value={plan.result} onChange={(v) => {
                   const items = [...d.plans.items]; items[i] = { ...items[i], result: v }; patch("plans", { ...d.plans, items });
                 }} />

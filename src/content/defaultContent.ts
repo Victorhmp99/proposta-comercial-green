@@ -8,13 +8,13 @@ export const defaultContent = {
     headlinePlain: "Sua empresa já gera demanda.",
     headlineQuestion: "A pergunta é: seu comercial sabe colher?",
     lede:
-      "Diagnóstico, playbook, scripts, CRM e acompanhamento — para transformar " +
-      "demanda em faturamento, não em agenda vazia.",
+      "Analisamos como sua empresa vende hoje, montamos o manual de vendas, " +
+      "treinamos o time e acompanhamos de perto — até a demanda virar faturamento.",
     badge: "Proposta Comercial",
     stats: [
-      { value: "93,2%", label: "das PMEs brasileiras vendem sem nenhum sistema comercial estruturado" },
-      { value: "67%", label: "dos leads perdidos no B2B são descartados por falta de qualificação — não de interesse" },
-      { value: "2,5%", label: "é a taxa de conversão mediana do B2B brasileiro hoje" },
+      { value: "93,2%", label: "das pequenas e médias empresas do Brasil vendem sem nenhum processo comercial organizado" },
+      { value: "67%", label: "dos clientes perdidos nas vendas entre empresas são descartados por falta de preparo do vendedor — não por falta de interesse" },
+      { value: "2,5%", label: "é a média de vendas fechadas a cada 100 contatos nas empresas brasileiras hoje" },
     ],
   },
 
@@ -22,14 +22,14 @@ export const defaultContent = {
     eyebrow: "O Problema Real",
     heading: "Marketing gera demanda. Comercial fraco transforma essa demanda em fracasso.",
     intro:
-      "Toda empresa precisa das duas coisas: gerar demanda e converter essa demanda. " +
-      "A maioria investe pesado na primeira e ignora a segunda — e é exatamente aí " +
-      "que o dinheiro do tráfego pago vaza.",
+      "Toda empresa precisa de duas coisas: atrair pessoas interessadas e transformar " +
+      "esse interesse em venda. A maioria investe pesado na primeira e esquece a " +
+      "segunda — e é exatamente aí que o dinheiro do anúncio vai embora.",
     stats: [
-      { num: "5", suffix: "+", text: "tentativas de follow-up são necessárias para fechar 80% das vendas", src: "LeadResponse / SPOTIO, 2026" },
+      { num: "5", suffix: "+", text: "tentativas de contato são necessárias para fechar 80% das vendas", src: "LeadResponse / SPOTIO, 2026" },
       { num: "44", suffix: "%", text: "dos vendedores desistem depois da primeira tentativa de contato", src: "LeadResponse, 2026" },
-      { num: "92", suffix: "%", text: "dos gestores comerciais relatam perder leads qualificados por atraso no follow-up", src: "Zapier, 2026" },
-      { num: "7", suffix: "x", text: "mais chance de qualificar um lead respondendo em até 1h, contra esperar 24h", src: "Harvard Business Review" },
+      { num: "92", suffix: "%", text: "dos gestores admitem perder clientes prontos para comprar por demorar a responder", src: "Zapier, 2026" },
+      { num: "7", suffix: "x", text: "mais chance de avançar com o cliente respondendo em até 1 hora, em vez de esperar um dia", src: "Harvard Business Review" },
     ],
     kicker: "Demanda sem conversão não é resultado. É custo.",
   },
@@ -38,16 +38,17 @@ export const defaultContent = {
     eyebrow: "Comercial forte × comercial fraco",
     heading: "Quanto mais forte o comercial, menos você depende de tráfego pago.",
     intro:
-      "Cada ponto de conversão a mais reduz o número de leads necessários para bater a " +
-      "mesma meta. Comercial fraco não é só venda perdida — é custo de aquisição multiplicado.",
+      "Cada venda a mais fechada com os mesmos contatos significa menos gente que você " +
+      "precisa atrair para bater a meta. Time despreparado não é só venda perdida — " +
+      "é dinheiro de anúncio jogado fora.",
     labelWeak: "Comercial fraco",
     labelStrong: "Comercial forte",
     rows: [
-      { label: "Resposta ao lead", weak: "Horas — ou o lead esfria", strong: "Minutos, com script pronto" },
-      { label: "Follow-up", weak: "1 tentativa, depois desiste", strong: "Cadência mínima de 3 tentativas por dia" },
-      { label: "Objeção", weak: "Trava a conversa e perde a venda", strong: "Reconhece como fuga e reverte" },
-      { label: "Métrica", weak: "Não sabe a própria taxa de conversão", strong: "Sabe onde o funil vaza, etapa por etapa" },
-      { label: "Tráfego pago", weak: "Precisa de mais leads para bater a meta", strong: "Fatura mais com o mesmo investimento" },
+      { label: "Tempo de resposta", weak: "Demora horas — e o cliente esfria", strong: "Responde em minutos, com a fala pronta" },
+      { label: "Insistência", weak: "Tenta uma vez e desiste", strong: "Pelo menos 3 tentativas por dia, com roteiro" },
+      { label: "Quando ouve um 'não'", weak: "Trava a conversa e perde a venda", strong: "Entende o motivo real e reverte" },
+      { label: "Controle dos números", weak: "Não sabe quantos por cento fecha", strong: "Sabe exatamente onde perde cliente, etapa por etapa" },
+      { label: "Retorno do anúncio", weak: "Precisa de mais gente para bater a meta", strong: "Fatura mais com o mesmo investimento" },
     ],
   },
 
@@ -56,16 +57,16 @@ export const defaultContent = {
     heading: "Cultivo: o segredo que a maioria das agências ignora.",
     visualTitle: "Sem Cultivo, a Colheita não vem.",
     steps: [
-      { num: "01", text: "Semente — a oferta certa" },
-      { num: "02", text: "Solo — demanda qualificada" },
+      { num: "01", text: "Semente — a oferta certa para o mercado certo" },
+      { num: "02", text: "Solo — gente interessada chegando todo dia" },
       { num: "03", text: "Cultivo — comercial treinado para fechar", active: true },
-      { num: "04", text: "Colheita — escala previsível" },
-      { num: "05", text: "Floresta — LTV e indicação" },
+      { num: "04", text: "Colheita — faturamento que se repete todo mês" },
+      { num: "05", text: "Floresta — cliente que volta e indica" },
     ],
-    textHeading: "Toda empresa precisa gerar demanda e converter essa demanda.",
+    textHeading: "Não adianta atrair muita gente se o time não sabe transformar isso em venda.",
     paragraph1:
-      "Você pode ter a Semente certa e o Solo fértil — anúncio bom, conteúdo bom, lead " +
-      "chegando. Se o Cultivo falha, a demanda inteira apodrece antes de virar faturamento.",
+      "Você pode ter a Semente certa e o Solo fértil — anúncio bom, conteúdo bom, gente " +
+      "chegando todo dia. Se o Cultivo falha, tudo isso apodrece antes de virar dinheiro.",
     paragraph2:
       "É por isso que o treinamento comercial não é um produto separado do resto do " +
       "método — é a etapa que garante que tudo o que vem antes não seja desperdiçado.",
@@ -77,63 +78,63 @@ export const defaultContent = {
     heading: "Estruturar seu comercial por conta própria custaria mais de R$ 30.000.",
     rows: [
       { label: "Diagnóstico comercial", value: "R$ 3.000 – 15.000" },
-      { label: "Playbook de vendas único, sob medida", value: "R$ 5.000 – 12.000" },
-      { label: "Scripts de vendas (biblioteca completa)", value: "R$ 1.500 – 4.000" },
-      { label: "CRM, por vendedor / mês", value: "R$ 80 – 200" },
+      { label: "Manual de vendas sob medida", value: "R$ 5.000 – 12.000" },
+      { label: "Falas prontas de venda (biblioteca completa)", value: "R$ 1.500 – 4.000" },
+      { label: "Sistema de CRM, por vendedor / mês", value: "R$ 80 – 200" },
       { label: "Consultoria comercial contínua / mês", value: "R$ 15.000 – 50.000" },
     ],
     total: { label: "Projeto de estruturação comercial completo, no mercado", value: "R$ 30.000 – 150.000" },
     kicker:
-      "Com a Green Hub, seu comercial começa a ser estruturado a partir de R$ 1.500 — e o " +
-      "nosso tier mais completo, o Elite, ainda fica abaixo do piso do que uma consultoria " +
-      "cobraria só pela implementação.",
+      "Com a Green Hub, seu comercial começa a ser estruturado a partir de R$ 1.500 — e até " +
+      "o nosso plano mais completo, o Elite, custa menos que o mínimo que uma consultoria " +
+      "cobraria só para montar tudo.",
   },
 
   results: {
     eyebrow: "Resultados",
     heading: "Parceiros que transformaram o comercial.",
     intro:
-      "Empresas que já pararam de depender de sorte no atendimento. Mesmo tráfego, " +
-      "mesma equipe — comercial estruturado.",
+      "Empresas que pararam de depender da sorte no atendimento. Mesmo investimento em " +
+      "anúncio, mesma equipe — só que agora com processo.",
   },
 
   glossary: {
     eyebrow: "Antes de escolher",
     heading: "O que é cada coisa que vem nos planos.",
     intro:
-      "Sem jargão: aqui está o que cada entrega significa na prática e o que ela muda " +
-      "no dia a dia do seu time comercial.",
+      "Em português claro: o que cada entrega é, e o que ela muda na prática no dia a " +
+      "dia do seu time.",
     items: [
       {
         term: "Diagnóstico",
-        text: "Levantamento do seu funil real: de onde vêm os leads, em que etapa eles somem e quanto você perde nisso. É o raio-x que define tudo o que vem depois.",
+        text: "O raio-x de como sua empresa vende hoje: de onde vêm os clientes, em que momento eles desistem e quanto dinheiro isso custa por mês. É o que define todo o resto do trabalho.",
       },
       {
-        term: "Playbook de Vendas",
-        text: "O manual da sua operação comercial. Como abordar, qualificar, apresentar preço, contornar objeção e fechar — documentado, para qualquer vendedor novo executar igual.",
+        term: "Playbook (manual de vendas)",
+        text: "O manual da sua área comercial escrito por completo: como abordar, como entender se a pessoa tem perfil, como falar o preço, como responder a um 'não' e como fechar. Vendedor novo entra e executa igual, sem depender de talento.",
       },
       {
-        term: "Scripts",
-        text: "As falas prontas para WhatsApp, telefone e reunião. Primeira mensagem, follow-up, quebra de objeção e fechamento — testados, não improvisados.",
+        term: "Scripts (as falas prontas)",
+        text: "O que falar, palavra por palavra, no WhatsApp, no telefone e na reunião: primeira mensagem, cobrança de resposta, resposta às desculpas mais comuns e fechamento. Testado, não improvisado na hora.",
       },
       {
-        term: "CRM",
-        text: "O sistema onde cada lead vira um registro com etapa, histórico e próximo passo. É o que faz você enxergar a taxa de conversão real em vez de achismo.",
+        term: "CRM (o sistema)",
+        text: "O programa onde cada cliente vira uma ficha, com o que já foi conversado e qual o próximo passo. É o que faz você saber quantos por cento você fecha de verdade, em vez de achar.",
       },
       {
-        term: "Roleplay",
-        text: "Simulação de venda ao vivo: o vendedor atende um cliente encenado e recebe correção na hora. É treino de verdade — erra no ensaio, não no lead real.",
+        term: "Roleplay (treino de venda)",
+        text: "Ensaio de venda ao vivo: o vendedor atende um cliente de mentira e é corrigido na hora. Ele erra no treino, não na frente do cliente que ia comprar.",
       },
       {
-        term: "SLA",
-        text: "O prazo máximo para você ser respondido pela nossa equipe. SLA 24h significa retorno em até um dia útil; no mesmo dia significa canal direto.",
+        term: "Suporte (prazo de resposta)",
+        text: "O prazo máximo para a nossa equipe te responder. 'Até 48h' são dois dias úteis; 'até 24h' é um dia útil; 'no mesmo dia' é canal direto com prioridade.",
       },
     ],
   },
 
   plans: {
     eyebrow: "Planos",
-    heading: "Escolha o ritmo de cultivo certo para o seu comercial.",
+    heading: "Escolha o ritmo de treinamento certo para o seu time.",
     resultLabel: "Resultado",
     revealLabel: "Desbloquear o investimento",
     hideLabel: "Ocultar o investimento",
@@ -142,29 +143,33 @@ export const defaultContent = {
         name: "Start",
         result: "2x",
         resultNote: "mais rápido para organizar o funil",
-        description: "Para quem precisa organizar o básico e treinar 1 pessoa por vez.",
+        description: "Para quem precisa organizar o básico e treinar uma pessoa por vez.",
+        frequency: "Treinamento 1x por mês",
         setup: "R$ 1.500",
         price: "R$ 2.000",
         features: [
-          "Diagnóstico de funil (macro)",
-          "Playbook de Vendas (genérico)",
-          "Treinamento em grupo, 1x/mês",
-          "Acompanhamento em grupo — SLA 48h",
+          "Diagnóstico geral de como vocês vendem hoje",
+          "Manual de vendas em modelo pronto",
+          "Treinamento em grupo, 1x por mês",
+          "CRM Green Hub disponível — acesso pago à parte",
+          "Acompanhamento em grupo — resposta em até 48h",
         ],
       },
       {
         name: "Unique",
         result: "3x",
         resultNote: "mais rápido para padronizar o time",
-        description: "Ritmo quinzenal, playbook mais completo, com certificado.",
+        description: "Ritmo quinzenal, manual de vendas mais completo, com certificado.",
+        frequency: "Treinamento a cada 15 dias",
         setup: "R$ 2.200",
         price: "R$ 3.500",
         features: [
-          "Diagnóstico de funil + gargalos",
-          "Playbook de Vendas + 1 etapa à escolha",
-          "Scripts básicos",
+          "Diagnóstico + onde vocês estão perdendo cliente",
+          "Manual de vendas + 1 etapa feita sob medida",
+          "Falas prontas para os momentos principais",
+          "Treinamento em grupo, a cada 15 dias",
           "CRM Green Hub com 25% de desconto",
-          "Acompanhamento prioritário — SLA 24h",
+          "Acompanhamento prioritário — resposta em até 24h",
           "Certificado de conclusão",
         ],
       },
@@ -172,17 +177,19 @@ export const defaultContent = {
         name: "Estratégico",
         result: "5x",
         resultNote: "mais rápido para escalar a conversão",
-        description: "Treinamento em equipe toda semana, playbook único e roleplay.",
+        description: "Treino em equipe toda semana, manual sob medida e ensaio de venda.",
+        frequency: "Treinamento 1x por semana",
         setup: "R$ 3.697",
         price: "R$ 7.890",
         featured: true,
         badge: "Mais vendido",
         features: [
-          "Diagnóstico individualizado por vendedor",
-          "Playbook único + 2 etapas à escolha",
-          "Scripts completos",
+          "Diagnóstico individual de cada vendedor",
+          "Manual de vendas sob medida + 2 etapas detalhadas",
+          "Todas as falas prontas, do primeiro contato ao fechamento",
+          "Treino em equipe, toda semana",
           "CRM Green Hub com 50% de desconto",
-          "Roleplay em equipe, toda semana",
+          "Ensaio de venda em equipe, toda semana",
           "Certificado de conclusão",
         ],
       },
@@ -190,17 +197,18 @@ export const defaultContent = {
         name: "Elite",
         result: "10x",
         resultNote: "mais rápido para virar máquina de vendas",
-        description: "Implementação completa e individualizada por vendedor.",
+        description: "Estruturação completa, com treino individual por vendedor.",
+        frequency: "Treinamento individual, no mínimo 1x por semana",
         setup: "R$ 5.490",
         price: "R$ 13.700",
         features: [
-          "Diagnóstico individualizado por vendedor",
-          "Playbook único e completo — todas as etapas",
-          "Scripts com atualização contínua",
-          "CRM Green Hub gratuito",
-          "Treinamento individualizado, 1x/semana no mínimo",
-          "Roleplay gravado com feedback individual",
-          "Canal direto — SLA no mesmo dia",
+          "Diagnóstico individual de cada vendedor",
+          "Manual de vendas completo — todas as etapas sob medida",
+          "Falas prontas atualizadas o tempo todo",
+          "Treino individual com cada vendedor, no mínimo 1x por semana",
+          "CRM Green Hub incluso, sem custo",
+          "Ensaio de venda gravado, com devolutiva individual",
+          "Canal direto — resposta no mesmo dia",
         ],
       },
     ],

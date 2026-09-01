@@ -9,7 +9,7 @@ export function Hero() {
   const c = content.hero;
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden px-6 py-24 flex items-center justify-center text-center">
+    <section className="relative min-h-[100svh] w-full overflow-hidden px-5 sm:px-6 py-20 sm:py-24 flex items-center justify-center text-center">
       {/* fundo em camadas */}
       <div
         className="absolute inset-0 -z-30"
@@ -76,7 +76,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[2.75rem] sm:text-6xl lg:text-7xl text-cream leading-[1.06] tracking-tight"
+          className="font-display text-[2.1rem] sm:text-5xl md:text-6xl lg:text-7xl text-cream leading-[1.08] tracking-tight text-balance"
           style={{ textShadow: "0 2px 40px rgba(0,0,0,0.5)" }}
         >
           {c.headlinePlain}
@@ -88,7 +88,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.22 }}
-          className="mt-8 max-w-2xl text-lg sm:text-xl text-silver-green leading-relaxed"
+          className="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-silver-green leading-relaxed"
         >
           {c.lede}
         </motion.p>
@@ -98,14 +98,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.42 }}
-          className="mt-16 pt-10 border-t border-white/12 grid sm:grid-cols-3 gap-10 w-full"
+          className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-white/12 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 w-full"
         >
           {c.stats.map((s) => (
             <div key={s.value} className="flex flex-col items-center">
-              <p className="font-display text-4xl sm:text-5xl text-cream mb-2.5 tabular">
+              <p className="font-display text-3xl sm:text-4xl md:text-5xl text-cream mb-2 sm:mb-2.5 tabular">
                 <Counter value={s.value} />
               </p>
-              <p className="text-[15px] text-silver-green/90 leading-snug max-w-[260px]">
+              <p className="text-sm sm:text-[15px] text-silver-green/90 leading-snug max-w-[280px]">
                 {s.label}
               </p>
             </div>

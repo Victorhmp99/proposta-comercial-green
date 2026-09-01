@@ -25,7 +25,7 @@ function RevealButton({
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex items-center gap-2.5 rounded-full bg-mint px-8 py-4 text-base font-bold text-[#0f172a] transition hover:bg-mint/90 hover:scale-[1.02] active:scale-100 shadow-[0_0_45px_-10px_rgba(34,197,94,0.8)]"
+      className="inline-flex items-center gap-2.5 rounded-full bg-mint px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#0f172a] transition hover:bg-mint/90 hover:scale-[1.02] active:scale-100 shadow-[0_0_45px_-10px_rgba(34,197,94,0.8)]"
     >
       {revealed ? <Unlock className="h-5 w-5" /> : <Lock className="h-5 w-5" />}
       {revealed ? hideLabel : showLabel}
@@ -42,17 +42,17 @@ export function Problem() {
     <Section id="problema" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-3xl mx-auto leading-tight text-balance">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">{c.intro}</p>
+        <p className="mt-5 sm:mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-base sm:text-lg">{c.intro}</p>
       </Reveal>
 
-      <RevealStagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+      <RevealStagger className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
         {c.stats.map((s) => (
-          <motion.div key={s.num + s.suffix} variants={staggerItem} className="bg-[#0f172a] p-7">
-            <p className="font-display text-5xl text-cream leading-none tabular">
+          <motion.div key={s.num + s.suffix} variants={staggerItem} className="bg-[#0f172a] p-6 sm:p-7">
+            <p className="font-display text-4xl sm:text-5xl text-cream leading-none tabular">
               <Counter value={s.num} />
               <span className="text-mint">{s.suffix}</span>
             </p>
@@ -78,18 +78,21 @@ export function Compare() {
     <Section id="comparativo" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-3xl mx-auto leading-tight text-balance">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">{c.intro}</p>
+        <p className="mt-5 sm:mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-base sm:text-lg">{c.intro}</p>
       </Reveal>
 
-      <Reveal delay={0.12} className="mt-12">
+      <Reveal delay={0.12} className="mt-10 sm:mt-12">
+        <p className="sm:hidden text-xs text-silver-green/50 mb-3">
+          Arraste para o lado para ver a comparação completa →
+        </p>
         <div className="overflow-x-auto rounded-2xl border border-white/10">
-          <div className="min-w-[640px] text-left">
+          <div className="min-w-[560px] sm:min-w-[640px] text-left">
             {/* cabeçalho */}
-            <div className="grid grid-cols-[1.2fr_1fr_1fr] bg-black/40">
+            <div className="grid grid-cols-[1fr_1fr_1fr] sm:grid-cols-[1.2fr_1fr_1fr] bg-black/40">
               <div className="px-5 py-4" />
               <div className="px-5 py-4 text-sm font-bold text-red-400 flex items-center gap-2">
                 <X className="h-4 w-4" />
@@ -104,13 +107,13 @@ export function Compare() {
             {c.rows.map((row, i) => (
               <div
                 key={row.label}
-                className={`grid grid-cols-[1.2fr_1fr_1fr] text-sm ${
+                className={`grid grid-cols-[1fr_1fr_1fr] sm:grid-cols-[1.2fr_1fr_1fr] text-[13px] sm:text-sm ${
                   i < c.rows.length - 1 ? "border-b border-white/10" : ""
                 }`}
               >
-                <div className="px-5 py-4 font-semibold text-silver-green bg-black/20">{row.label}</div>
-                <div className="px-5 py-4 text-cream/85 bg-red-500/8">{row.weak}</div>
-                <div className="px-5 py-4 text-cream bg-mint/10">{row.strong}</div>
+                <div className="px-4 sm:px-5 py-3.5 sm:py-4 font-semibold text-silver-green bg-black/20">{row.label}</div>
+                <div className="px-4 sm:px-5 py-3.5 sm:py-4 text-cream/85 bg-red-500/8">{row.weak}</div>
+                <div className="px-4 sm:px-5 py-3.5 sm:py-4 text-cream bg-mint/10">{row.strong}</div>
               </div>
             ))}
           </div>
@@ -129,13 +132,13 @@ export function Cultivo() {
     <Section id="cultivo" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-3xl mx-auto leading-tight text-balance">{c.heading}</h2>
       </Reveal>
 
-      <div className="mt-14 grid lg:grid-cols-2 gap-12 items-start text-left">
+      <div className="mt-10 sm:mt-14 grid lg:grid-cols-2 gap-8 lg:gap-12 items-start text-left">
         {/* visual do método */}
         <Reveal delay={0.08}>
-          <div className="rounded-2xl border border-white/10 bg-forest/60 p-8">
+          <div className="rounded-2xl border border-white/10 bg-forest/60 p-6 sm:p-8">
             <p className="text-xs uppercase tracking-widest text-silver-green/60 mb-2">
               Método Floresta
             </p>
@@ -190,15 +193,15 @@ export function Anchor() {
     <Section id="ancora" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-3xl mx-auto leading-tight text-balance">{c.heading}</h2>
       </Reveal>
 
-      <RevealStagger className="mt-12 rounded-2xl border border-white/10 overflow-hidden">
+      <RevealStagger className="mt-10 sm:mt-12 rounded-2xl border border-white/10 overflow-hidden">
         {c.rows.map((row, i) => (
           <motion.div
             key={row.label}
             variants={staggerItem}
-            className={`flex items-center justify-between gap-6 px-6 py-5 bg-black/25 text-left ${
+            className={`flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 sm:px-6 py-4 sm:py-5 bg-black/25 text-left ${
               i < c.rows.length - 1 ? "border-b border-white/10" : ""
             }`}
           >
@@ -209,7 +212,7 @@ export function Anchor() {
       </RevealStagger>
 
       <Reveal delay={0.1}>
-        <div className="mt-1 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-mint/10 border border-mint/30 px-6 py-6">
+        <div className="mt-1 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-mint/10 border border-mint/30 px-5 sm:px-6 py-5 sm:py-6">
           <span className="font-semibold text-cream">{c.total.label}</span>
           <span className="font-display text-2xl text-mint">{c.total.value}</span>
         </div>
@@ -231,10 +234,10 @@ export function Cases() {
     <Section id="resultados" tone="black" transition="zoomOut">
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-2xl mx-auto leading-tight text-balance">
           {c.heading}
         </h2>
-        <p className="mt-6 max-w-xl mx-auto text-silver-green leading-relaxed text-lg">
+        <p className="mt-5 sm:mt-6 max-w-xl mx-auto text-silver-green leading-relaxed text-base sm:text-lg">
           {c.intro}
         </p>
       </Reveal>
@@ -255,21 +258,21 @@ export function Glossary() {
     <Section id="glossario" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-3xl mx-auto leading-tight text-balance">
           {c.heading}
         </h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">
+        <p className="mt-5 sm:mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-base sm:text-lg">
           {c.intro}
         </p>
       </Reveal>
 
-      <RevealStagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <RevealStagger className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {c.items.map((item) => (
           <motion.div key={item.term} variants={staggerItem}>
-            <div className="h-full rounded-2xl border border-white/10 bg-black/30 p-6 text-left">
+            <div className="h-full rounded-2xl border border-white/10 bg-black/30 p-5 sm:p-6 text-left">
               <p className="font-display text-xl text-mint mb-3">{item.term}</p>
               <p className="text-[15px] text-silver-green/90 leading-snug">{item.text}</p>
             </div>
@@ -290,7 +293,7 @@ export function Plans() {
     <Section id="planos" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">{c.heading}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl text-cream max-w-2xl mx-auto leading-tight text-balance">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
@@ -304,11 +307,11 @@ export function Plans() {
         </div>
       </Reveal>
 
-      <RevealStagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <RevealStagger className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {c.items.map((plan) => (
           <motion.div key={plan.name} variants={staggerItem}>
             <div
-              className={`relative h-full rounded-2xl border p-6 flex flex-col ${
+              className={`relative h-full rounded-2xl border p-5 sm:p-6 flex flex-col ${
                 plan.featured
                   ? "border-mint bg-mint/5 shadow-[0_0_0_1px_rgba(34,197,94,0.6)]"
                   : "border-white/10 bg-black/25"
@@ -316,7 +319,7 @@ export function Plans() {
             >
               {/* resultado em destaque */}
               <div
-                className={`-mx-6 -mt-6 mb-5 rounded-t-2xl px-5 py-4 border-b ${
+                className={`-mx-5 sm:-mx-6 -mt-5 sm:-mt-6 mb-5 rounded-t-2xl px-5 py-4 border-b ${
                   plan.featured
                     ? "bg-mint/20 border-mint/40"
                     : "bg-mint/10 border-white/10"
@@ -342,7 +345,7 @@ export function Plans() {
               </div>
 
               <p className="font-display text-2xl text-cream mb-2">{plan.name}</p>
-              <p className="text-sm text-silver-green/85 leading-snug min-h-[54px]">
+              <p className="text-sm text-silver-green/85 leading-snug sm:min-h-[54px]">
                 {plan.description}
               </p>
 
@@ -386,13 +389,13 @@ export function Imersao() {
     <Section id="imersao" tone="forest" panel>
       {/* título em destaque */}
       <Reveal>
-        <h2 className="font-display text-5xl sm:text-7xl text-gradient-gold leading-none tracking-tight uppercase">
+        <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-gradient-gold leading-none tracking-tight uppercase">
           {c.title}
         </h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-7 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">
+        <p className="mt-6 sm:mt-7 max-w-2xl mx-auto text-silver-green leading-relaxed text-base sm:text-lg">
           {c.intro}
         </p>
       </Reveal>
@@ -418,7 +421,7 @@ export function Imersao() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* investimento */}
-            <div className="mt-12 flex flex-wrap justify-center gap-14">
+            <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-8 sm:gap-14">
               <div>
                 <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.tableLabel}</p>
                 <p className="font-display text-3xl text-cream/55 line-through decoration-red-400 decoration-2 tabular">
@@ -427,15 +430,15 @@ export function Imersao() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.closingLabel}</p>
-                <p className="font-display text-5xl text-mint tabular">
+                <p className="font-display text-4xl sm:text-5xl text-mint tabular">
                   <Counter value={c.closingPrice} />
                 </p>
               </div>
             </div>
 
             {/* Método Floresta em destaque */}
-            <div className="mt-12 rounded-2xl border border-mint/35 bg-mint/[0.07] px-8 py-8">
-              <p className="font-display text-3xl sm:text-4xl text-gradient-gold leading-none mb-4">
+            <div className="mt-10 sm:mt-12 rounded-2xl border border-mint/35 bg-mint/[0.07] px-6 sm:px-8 py-7 sm:py-8">
+              <p className="font-display text-2xl sm:text-3xl md:text-4xl text-gradient-gold leading-none mb-4">
                 {c.methodName}
               </p>
               <p className="text-[15px] text-silver-green leading-snug max-w-lg mx-auto">
@@ -444,9 +447,9 @@ export function Imersao() {
             </div>
 
             {/* etapas do dia */}
-            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
               {c.steps.map((s) => (
-                <div key={s.title} className="bg-[#101b32] p-6">
+                <div key={s.title} className="bg-[#101b32] p-5 sm:p-6">
                   <p className="text-xs font-bold text-mint uppercase tracking-wide">{s.tag}</p>
                   <h4 className="font-display text-lg text-cream mt-2">{s.title}</h4>
                   <p className="text-sm text-silver-green/90 mt-2 leading-snug">
@@ -477,12 +480,12 @@ export function Closing() {
   return (
     <Section id="fechamento" tone="black" panel className="text-center">
       <Reveal>
-        <h2 className="font-display text-4xl sm:text-6xl text-cream">
+        <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl text-cream">
           {c.titlePlain}
           <span className="text-gradient-gold">{c.titleGold}</span>
         </h2>
-        <p className="mt-8 text-xl text-silver-green/80">{c.line1}</p>
-        <p className="text-xl text-cream font-semibold">{c.line2}</p>
+        <p className="mt-7 text-lg sm:text-xl text-silver-green/80">{c.line1}</p>
+        <p className="text-lg sm:text-xl text-cream font-semibold">{c.line2}</p>
       </Reveal>
     </Section>
   );

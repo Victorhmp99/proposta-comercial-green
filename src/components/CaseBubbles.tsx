@@ -15,6 +15,11 @@ const images = [
   "5037628289387793369.jpg",
   "5037628289387793370.jpg",
   "5037628289387793371.jpg",
+  "4950009925757242552.jpg",
+  "4950009925757242553.jpg",
+  "4950009925757242554.jpg",
+  "4950009925757242555.jpg",
+  "4950009925757242556.jpg",
 ];
 
 /* Grade de células com margem generosa nas bordas — mesmo no auge do
@@ -36,6 +41,18 @@ function randomBetween(min: number, max: number) {
   return min + Math.random() * (max - min);
 }
 
+/** Bolhas menores (e menos delas) em telas pequenas. */
+function useViewport() {
+  const [vw, setVw] = useState(1280);
+  useEffect(() => {
+    const update = () => setVw(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return vw;
+}
+
 /* Cada bolha vive seu próprio ciclo: aparece, flutua, "estoura" e renasce em
    outra célula com outra imagem — nunca repetindo imagem ou célula em uso.
    O início de cada bolha é escalonado para nunca dar tela vazia. */
@@ -45,17 +62,21 @@ function Bubble({
   releaseImage,
   activeCells,
   releaseCell,
+  minSize,
+  maxSize,
 }: {
   index: number;
   activeImages: React.RefObject<Set<string>>;
   releaseImage: (src: string) => void;
   activeCells: React.RefObject<Set<number>>;
   releaseCell: (cell: number) => void;
+  minSize: number;
+  maxSize: number;
 }) {
   const [cycle, setCycle] = useState(0);
   const [src, setSrc] = useState<string | null>(null);
   const [cellIndex, setCellIndex] = useState<number | null>(null);
-  const [size] = useState(() => randomBetween(130, 178));
+  const [size] = useState(() => randomBetween(minSize, maxSize));
   const currentSrcRef = useRef<string | null>(null);
   const currentCellRef = useRef<number | null>(null);
 
@@ -140,17 +161,27 @@ export function CaseBubbles() {
   const activeCells = useRef<Set<number>>(new Set());
   const releaseImage = (src: string) => activeImages.current.delete(src);
   const releaseCell = (cell: number) => activeCells.current.delete(cell);
+  const vw = useViewport();
+
+  const isMobile = vw < 640;
+  const isTablet = vw >= 640 && vw < 1024;
+
+  const slots = isMobile ? 3 : isTablet ? 4 : SLOT_COUNT;
+  const minSize = isMobile ? 84 : isTablet ? 110 : 130;
+  const maxSize = isMobile ? 112 : isTablet ? 148 : 178;
 
   return (
-    <div className="relative mx-auto mt-8 h-[540px] sm:h-[640px] lg:h-[760px] w-full max-w-5xl overflow-hidden">
-      {Array.from({ length: SLOT_COUNT }).map((_, i) => (
+    <div className="relative mx-auto mt-8 h-[420px] sm:h-[560px] lg:h-[760px] w-full max-w-5xl overflow-hidden">
+      {Array.from({ length: slots }).map((_, i) => (
         <Bubble
-          key={i}
+          key={`${i}-${slots}`}
           index={i}
           activeImages={activeImages}
           releaseImage={releaseImage}
           activeCells={activeCells}
           releaseCell={releaseCell}
+          minSize={minSize}
+          maxSize={maxSize}
         />
       ))}
     </div>

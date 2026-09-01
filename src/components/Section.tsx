@@ -51,10 +51,10 @@ export function Section({
     <section
       id={id}
       className={clsx(
-        "relative w-full px-6 py-24 sm:py-32 overflow-hidden",
+        "relative w-full px-5 sm:px-6 py-16 sm:py-24 lg:py-32 overflow-hidden",
         TONE_BG[resolvedTone],
         resolvedTransition === "panel" &&
-          "rounded-t-[2.5rem] shadow-[0_-30px_60px_-25px_rgba(0,0,0,0.55)]",
+          "rounded-t-[1.75rem] sm:rounded-t-[2.5rem] shadow-[0_-30px_60px_-25px_rgba(0,0,0,0.55)]",
         className
       )}
     >

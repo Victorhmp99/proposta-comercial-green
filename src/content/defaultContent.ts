@@ -100,7 +100,7 @@ export const defaultContent = {
 
   glossary: {
     eyebrow: "Antes de escolher",
-    heading: "O que é cada coisa que vem nos planos. Como vamos estruturar seu comercial.",
+    heading: "Como vamos estruturar seu comercial.",
     intro:
       "Em português claro: o que cada entrega é, e o que ela muda na prática no dia a " +
       "dia do seu time.",

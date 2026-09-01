@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  /* Green Hub — Treinamento Comercial (paleta navy + verde) */
+  --gh-forest: #152038; /* Navy 2 — superfícies elevadas */
+  --gh-medium: #16a34a; /* Verde profundo — secundário */
+  --gh-mint: #22c55e; /* Verde — acento principal */
+  --gh-gold: #4ade80; /* Verde claro — destaque (mantém o nome p/ compatibilidade) */
+  --gh-silver-green: #b9c3d6; /* Azul acinzentado — texto secundário */
+  --gh-cream: #f8fafc; /* Branco gelo — texto */
+  --gh-bg: #0f172a; /* Navy — fundo do site */
+
+  --background: var(--gh-bg);
+  --foreground: var(--gh-cream);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: var(--gh-forest);
+  --color-medium: var(--gh-medium);
+  --color-mint: var(--gh-mint);
+  --color-gold: var(--gh-gold);
+  --color-silver-green: var(--gh-silver-green);
+  --color-cream: var(--gh-cream);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+h1, .font-display {
+  font-family: var(--font-display);
+}
+
+h2, h3, h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.glass-3d {
+  background: linear-gradient(155deg, rgba(255,255,255,0.08), rgba(255,255,255,0.015));
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.12) inset,
+    0 30px 70px -20px rgba(0,0,0,0.65),
+    0 0 40px -18px rgba(143, 230, 184, 0.25);
+  transition: box-shadow 0.4s ease;
+}
+
+.glass-3d:hover {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.16) inset,
+    0 30px 70px -20px rgba(0,0,0,0.65),
+    0 0 60px -10px rgba(232, 196, 104, 0.35);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(110deg, #dcfce7 0%, #22c55e 25%, #86efac 50%, #16a34a 75%, #dcfce7 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+/* valores borrados até o clique */
+.value-blur {
+  filter: blur(10px);
+  user-select: none;
+  transition: filter 0.5s ease;
+}
+
+.metallic-mint {
+  background: linear-gradient(110deg, #d8fff0 0%, #8fe6b8 25%, #ffffff 50%, #5fcf94 75%, #d8fff0 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 250% center; }
+}
+
+.metallic-surface {
+  background: linear-gradient(135deg, rgba(143,230,184,0.18), rgba(232,196,104,0.1) 50%, rgba(143,230,184,0.05));
+  border: 1px solid rgba(232,196,104,0.25);
+}
+
+@keyframes levitate {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.levitate {
+  animation: levitate 4.5s ease-in-out infinite;
+}
+
+.bg-noise {
+  background-image: radial-gradient(circle at 1px 1px, rgba(244, 247, 245, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 168, 75, 0.5), transparent);
+}
+
+::selection {
+  background: var(--gh-mint);
+  color: var(--gh-bg);
+}
+
+html {
+  scroll-behavior: smooth;
+}

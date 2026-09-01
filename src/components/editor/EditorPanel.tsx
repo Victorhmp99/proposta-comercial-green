@@ -203,6 +203,7 @@ export function EditorPanel({ onClose }: { onClose: () => void }) {
             <TextArea label="Introdução" rows={3} value={d.imersao.intro} onChange={(v) => patch("imersao", { ...d.imersao, intro: v })} />
             <Field label="Botão — mostrar" value={d.imersao.revealLabel} onChange={(v) => patch("imersao", { ...d.imersao, revealLabel: v })} />
             <Field label="Botão — ocultar" value={d.imersao.hideLabel} onChange={(v) => patch("imersao", { ...d.imersao, hideLabel: v })} />
+            <Field label="Título em destaque" value={d.imersao.title} onChange={(v) => patch("imersao", { ...d.imersao, title: v })} />
             <Field label="Nome do método (destaque)" value={d.imersao.methodName} onChange={(v) => patch("imersao", { ...d.imersao, methodName: v })} />
             <TextArea label="Texto do destaque" rows={3} value={d.imersao.methodNote} onChange={(v) => patch("imersao", { ...d.imersao, methodNote: v })} />
             <Field label="Preço de tabela" value={d.imersao.tablePrice} onChange={(v) => patch("imersao", { ...d.imersao, tablePrice: v })} />

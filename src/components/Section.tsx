@@ -58,7 +58,7 @@ export function Section({
         className
       )}
     >
-      <div className="mx-auto max-w-5xl">{children}</div>
+      <div className="mx-auto max-w-5xl text-center">{children}</div>
     </section>
   );
 

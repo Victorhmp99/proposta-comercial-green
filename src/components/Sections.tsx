@@ -41,11 +41,11 @@ export function Problem() {
     <Section id="problema" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl leading-tight">{c.heading}</h2>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
+        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
       <RevealStagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
@@ -77,16 +77,16 @@ export function Compare() {
     <Section id="comparativo" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl leading-tight">{c.heading}</h2>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
+        <p className="mt-6 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">{c.intro}</p>
       </Reveal>
 
       <Reveal delay={0.12} className="mt-12">
         <div className="overflow-x-auto rounded-2xl border border-white/10">
-          <div className="min-w-[640px]">
+          <div className="min-w-[640px] text-left">
             {/* cabeçalho */}
             <div className="grid grid-cols-[1.2fr_1fr_1fr] bg-black/40">
               <div className="px-5 py-4" />
@@ -128,10 +128,10 @@ export function Cultivo() {
     <Section id="cultivo" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl leading-tight">{c.heading}</h2>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
       </Reveal>
 
-      <div className="mt-14 grid lg:grid-cols-2 gap-12 items-start">
+      <div className="mt-14 grid lg:grid-cols-2 gap-12 items-start text-left">
         {/* visual do método */}
         <Reveal delay={0.08}>
           <div className="rounded-2xl border border-white/10 bg-forest/60 p-8">
@@ -189,7 +189,7 @@ export function Anchor() {
     <Section id="ancora" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl leading-tight">{c.heading}</h2>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">{c.heading}</h2>
       </Reveal>
 
       <RevealStagger className="mt-12 rounded-2xl border border-white/10 overflow-hidden">
@@ -197,7 +197,7 @@ export function Anchor() {
           <motion.div
             key={row.label}
             variants={staggerItem}
-            className={`flex items-center justify-between gap-6 px-6 py-5 bg-black/25 ${
+            className={`flex items-center justify-between gap-6 px-6 py-5 bg-black/25 text-left ${
               i < c.rows.length - 1 ? "border-b border-white/10" : ""
             }`}
           >
@@ -215,7 +215,7 @@ export function Anchor() {
       </Reveal>
 
       <Reveal delay={0.14}>
-        <p className="mt-7 max-w-2xl text-sm text-silver-green/90 leading-relaxed">{c.kicker}</p>
+        <p className="mt-7 max-w-2xl mx-auto text-sm text-silver-green/90 leading-relaxed">{c.kicker}</p>
       </Reveal>
     </Section>
   );
@@ -231,7 +231,7 @@ export function Plans() {
     <Section id="planos" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl leading-tight">{c.heading}</h2>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">{c.heading}</h2>
       </Reveal>
 
       <Reveal delay={0.08}>
@@ -306,69 +306,87 @@ export function Imersao() {
 
   return (
     <Section id="imersao" tone="forest" panel>
+      {/* título em destaque */}
       <Reveal>
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl leading-tight">{c.heading}</h2>
+        <h2 className="font-display text-5xl sm:text-7xl text-gradient-gold leading-none tracking-tight uppercase">
+          {c.title}
+        </h2>
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="mt-6 max-w-2xl text-silver-green leading-relaxed text-lg">{c.intro}</p>
+        <p className="mt-7 max-w-2xl mx-auto text-silver-green leading-relaxed text-lg">
+          {c.intro}
+        </p>
       </Reveal>
 
-      {/* Método Floresta em destaque */}
+      {/* botão que libera tudo */}
       <Reveal delay={0.12}>
-        <div className="mt-10 rounded-2xl border border-mint/35 bg-mint/[0.07] px-7 py-7 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <p className="font-display text-3xl sm:text-4xl text-gradient-gold leading-none shrink-0">
-            {c.methodName}
-          </p>
-          <p className="text-[15px] text-silver-green leading-snug max-w-md">{c.methodNote}</p>
-        </div>
-      </Reveal>
-
-      <RevealStagger className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
-        {c.steps.map((s) => (
-          <motion.div key={s.title} variants={staggerItem} className="bg-[#101b32] p-6">
-            <p className="text-xs font-bold text-mint">{s.tag}</p>
-            <h4 className="font-display text-base text-cream mt-2">{s.title}</h4>
-            <p className="text-sm text-silver-green/90 mt-2 leading-snug">
-              {s.text.split(c.methodName).map((part, i, arr) => (
-                <span key={i}>
-                  {part}
-                  {i < arr.length - 1 && (
-                    <strong className="font-bold text-mint">{c.methodName}</strong>
-                  )}
-                </span>
-              ))}
-            </p>
-          </motion.div>
-        ))}
-      </RevealStagger>
-
-      {/* investimento — borrado até revelar */}
-      <Reveal delay={0.12}>
-        <div className="mt-12 pt-9 border-t border-white/10">
+        <div className="mt-9">
           <RevealButton
             revealed={revealed}
             onClick={() => setRevealed((v) => !v)}
             showLabel={c.revealLabel}
             hideLabel={c.hideLabel}
           />
-          <div className="mt-9 flex flex-wrap gap-14">
-            <div className={revealed ? "" : "value-blur"}>
-              <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.tableLabel}</p>
-              <p className="font-display text-3xl text-cream/55 line-through decoration-red-400 decoration-2 tabular">
-                {revealed ? <Counter value={c.tablePrice} /> : c.tablePrice}
-              </p>
-            </div>
-            <div className={revealed ? "" : "value-blur"}>
-              <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.closingLabel}</p>
-              <p className="font-display text-4xl text-mint tabular">
-                {revealed ? <Counter value={c.closingPrice} /> : c.closingPrice}
-              </p>
-            </div>
-          </div>
         </div>
       </Reveal>
+
+      <AnimatePresence>
+        {revealed && (
+          <motion.div
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {/* investimento */}
+            <div className="mt-12 flex flex-wrap justify-center gap-14">
+              <div>
+                <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.tableLabel}</p>
+                <p className="font-display text-3xl text-cream/55 line-through decoration-red-400 decoration-2 tabular">
+                  <Counter value={c.tablePrice} />
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-silver-green/70 mb-1.5">{c.closingLabel}</p>
+                <p className="font-display text-5xl text-mint tabular">
+                  <Counter value={c.closingPrice} />
+                </p>
+              </div>
+            </div>
+
+            {/* Método Floresta em destaque */}
+            <div className="mt-12 rounded-2xl border border-mint/35 bg-mint/[0.07] px-8 py-8">
+              <p className="font-display text-3xl sm:text-4xl text-gradient-gold leading-none mb-4">
+                {c.methodName}
+              </p>
+              <p className="text-[15px] text-silver-green leading-snug max-w-lg mx-auto">
+                {c.methodNote}
+              </p>
+            </div>
+
+            {/* etapas do dia */}
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+              {c.steps.map((s) => (
+                <div key={s.title} className="bg-[#101b32] p-6">
+                  <p className="text-xs font-bold text-mint uppercase tracking-wide">{s.tag}</p>
+                  <h4 className="font-display text-lg text-cream mt-2">{s.title}</h4>
+                  <p className="text-sm text-silver-green/90 mt-2 leading-snug">
+                    {s.text.split(c.methodName).map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <strong className="font-bold text-mint">{c.methodName}</strong>
+                        )}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 }

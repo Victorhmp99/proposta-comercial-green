@@ -9,71 +9,75 @@ export function Hero() {
   const c = content.hero;
 
   return (
-    <section className="relative min-h-[92vh] w-full overflow-hidden px-6 py-24 flex items-center">
-      {/* fundo com brilho radial */}
+    <section className="relative min-h-screen w-full overflow-hidden px-6 py-24 flex items-center justify-center text-center">
+      {/* fundo em camadas */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-30"
         style={{
           background:
-            "radial-gradient(1100px 520px at 18% -10%, #1c2c4f 0%, #0f172a 55%)",
+            "radial-gradient(1200px 700px at 50% -15%, #1e3a5f 0%, #16233f 42%, #0f172a 78%)",
         }}
       />
-      <div className="absolute inset-0 -z-10 bg-noise opacity-60" />
-
-      {/* orbes verdes suaves */}
+      {/* malha sutil */}
+      <div
+        className="absolute inset-0 -z-20 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage: "radial-gradient(ellipse 70% 55% at 50% 40%, #000 30%, transparent 75%)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 55% at 50% 40%, #000 30%, transparent 75%)",
+        }}
+      />
+      {/* brilho verde central */}
       <motion.div
-        className="absolute -z-10 rounded-full blur-3xl"
+        className="absolute -z-10 rounded-full blur-[110px] pointer-events-none"
+        style={{
+          width: 620,
+          height: 620,
+          top: "8%",
+          left: "50%",
+          x: "-50%",
+          background: "radial-gradient(circle, rgba(34,197,94,0.28), transparent 68%)",
+        }}
+        animate={{ scale: [1, 1.12, 1], opacity: [0.75, 1, 0.75] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute -z-10 rounded-full blur-[90px] pointer-events-none"
         style={{
           width: 380,
           height: 380,
-          top: "10%",
-          right: "6%",
-          background: "radial-gradient(circle, rgba(34,197,94,0.22), transparent 70%)",
-        }}
-        animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute -z-10 rounded-full blur-3xl"
-        style={{
-          width: 300,
-          height: 300,
-          bottom: "8%",
-          left: "4%",
+          bottom: "6%",
+          left: "12%",
           background: "radial-gradient(circle, rgba(34,197,94,0.14), transparent 70%)",
         }}
-        animate={{ y: [0, 26, 0], x: [0, -18, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ y: [0, -26, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
+      <motion.div
+        className="absolute -z-10 rounded-full blur-[90px] pointer-events-none"
+        style={{
+          width: 340,
+          height: 340,
+          top: "14%",
+          right: "8%",
+          background: "radial-gradient(circle, rgba(74,222,128,0.12), transparent 70%)",
+        }}
+        animate={{ y: [0, 24, 0] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* vinheta inferior */}
+      <div className="absolute inset-x-0 bottom-0 h-64 -z-10 bg-gradient-to-t from-[#0f172a] to-transparent" />
 
-      <div className="mx-auto max-w-5xl w-full relative z-10">
-        {/* tag */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-mint/35 bg-mint/10 px-4 py-2 text-xs sm:text-sm font-semibold text-mint mb-8"
-        >
-          <span className="inline-block h-2 w-2 rounded-full bg-mint" />
-          {c.tag}
-        </motion.div>
-
-        {/* marca */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-sm tracking-[0.35em] text-cream/60 mb-6"
-        >
-          {c.title} · {c.subtitle.toUpperCase()}
-        </motion.p>
-
+      <div className="mx-auto max-w-4xl w-full relative z-10 flex flex-col items-center">
         {/* headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.15 }}
-          className="font-display text-4xl sm:text-6xl lg:text-7xl text-cream leading-[1.05] max-w-4xl"
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="font-display text-[2.75rem] sm:text-6xl lg:text-7xl text-cream leading-[1.06] tracking-tight"
+          style={{ textShadow: "0 2px 40px rgba(0,0,0,0.5)" }}
         >
           {c.headlinePlain}
           <br />
@@ -81,27 +85,29 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-7 max-w-xl text-xl text-silver-green leading-relaxed"
+          transition={{ duration: 0.75, delay: 0.22 }}
+          className="mt-8 max-w-2xl text-lg sm:text-xl text-silver-green leading-relaxed"
         >
           {c.lede}
         </motion.p>
 
         {/* estatísticas */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-14 pt-9 border-t border-white/10 grid sm:grid-cols-3 gap-8"
+          transition={{ duration: 0.75, delay: 0.42 }}
+          className="mt-16 pt-10 border-t border-white/12 grid sm:grid-cols-3 gap-10 w-full"
         >
           {c.stats.map((s) => (
-            <div key={s.value} className="max-w-[240px]">
-              <p className="font-display text-4xl text-cream mb-1.5 tabular">
+            <div key={s.value} className="flex flex-col items-center">
+              <p className="font-display text-4xl sm:text-5xl text-cream mb-2.5 tabular">
                 <Counter value={s.value} />
               </p>
-              <p className="text-[15px] text-silver-green/90 leading-snug">{s.label}</p>
+              <p className="text-[15px] text-silver-green/90 leading-snug max-w-[260px]">
+                {s.label}
+              </p>
             </div>
           ))}
         </motion.div>

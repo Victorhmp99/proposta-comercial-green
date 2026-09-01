@@ -156,13 +156,14 @@ export const defaultContent = {
   },
 
   imersao: {
+    title: "Imersão Floresta",
     eyebrow: "Imersão Floresta",
     heading: "Imersão Floresta: a virada comercial completa em 1 dia, sem esperar meses.",
     intro:
       "Diagnóstico prévio, um dia inteiro presencial com o time, playbook construído ao " +
       "vivo e 30 dias de suporte direto. Vagas limitadas por trimestre.",
-    revealLabel: "Desbloquear investimento",
-    hideLabel: "Ocultar investimento",
+    revealLabel: "Liberar Imersão",
+    hideLabel: "Ocultar Imersão",
     methodName: "Método Floresta",
     methodNote:
       "A palestra inteira é conduzida dentro do Método Floresta — as 5 etapas aplicadas " +

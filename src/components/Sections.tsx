@@ -6,6 +6,7 @@ import { Reveal, RevealStagger, staggerItem } from "./Reveal";
 import { Section, Eyebrow, Kicker } from "./Section";
 import { useContent } from "@/content/ContentContext";
 import { Counter } from "./Counter";
+import { CaseBubbles } from "./CaseBubbles";
 import { CheckCircle2, X, Lock, Unlock } from "lucide-react";
 
 /* ---------- botão de revelar valores ---------- */
@@ -221,13 +222,37 @@ export function Anchor() {
   );
 }
 
+/* ---------- 5a. RESULTADOS (balões) ---------- */
+export function Cases() {
+  const { content } = useContent();
+  const c = content.results;
+
+  return (
+    <Section id="resultados" tone="black" transition="zoomOut">
+      <Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">
+          {c.heading}
+        </h2>
+        <p className="mt-6 max-w-xl mx-auto text-silver-green leading-relaxed text-lg">
+          {c.intro}
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <CaseBubbles />
+      </Reveal>
+    </Section>
+  );
+}
+
 /* ---------- 5b. GLOSSÁRIO ---------- */
 export function Glossary() {
   const { content } = useContent();
   const c = content.glossary;
 
   return (
-    <Section id="glossario" tone="black" panel>
+    <Section id="glossario" tone="forest" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h2 className="text-3xl sm:text-5xl text-cream max-w-3xl mx-auto leading-tight">
@@ -262,7 +287,7 @@ export function Plans() {
   const [revealed, setRevealed] = useState(false);
 
   return (
-    <Section id="planos" tone="forest" panel>
+    <Section id="planos" tone="black" panel>
       <Reveal>
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h2 className="text-3xl sm:text-5xl text-cream max-w-2xl mx-auto leading-tight">{c.heading}</h2>
@@ -358,7 +383,7 @@ export function Imersao() {
   const [revealed, setRevealed] = useState(false);
 
   return (
-    <Section id="imersao" tone="black" panel>
+    <Section id="imersao" tone="forest" panel>
       {/* título em destaque */}
       <Reveal>
         <h2 className="font-display text-5xl sm:text-7xl text-gradient-gold leading-none tracking-tight uppercase">

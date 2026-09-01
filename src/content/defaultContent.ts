@@ -89,6 +89,14 @@ export const defaultContent = {
       "cobraria só pela implementação.",
   },
 
+  results: {
+    eyebrow: "Resultados",
+    heading: "Parceiros que transformaram o comercial.",
+    intro:
+      "Empresas que já pararam de depender de sorte no atendimento. Mesmo tráfego, " +
+      "mesma equipe — comercial estruturado.",
+  },
+
   glossary: {
     eyebrow: "Antes de escolher",
     heading: "O que é cada coisa que vem nos planos.",

@@ -173,6 +173,11 @@ export function EditorPanel({ onClose }: { onClose: () => void }) {
             <TextArea label="Frase final" rows={3} value={d.anchor.kicker} onChange={(v) => patch("anchor", { ...d.anchor, kicker: v })} />
           </Section>
 
+          <Section title="Resultados (balões)">
+            <Field label="Título" value={d.results.heading} onChange={(v) => patch("results", { ...d.results, heading: v })} />
+            <TextArea label="Introdução" rows={3} value={d.results.intro} onChange={(v) => patch("results", { ...d.results, intro: v })} />
+          </Section>
+
           <Section title="Glossário (antes dos planos)">
             <Field label="Título" value={d.glossary.heading} onChange={(v) => patch("glossary", { ...d.glossary, heading: v })} />
             <TextArea label="Introdução" rows={3} value={d.glossary.intro} onChange={(v) => patch("glossary", { ...d.glossary, intro: v })} />
